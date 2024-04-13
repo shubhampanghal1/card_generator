@@ -19,9 +19,9 @@ function Sidebar({ Select, value }) {
           <li className="nav-item">
             <a
               href="#"
-              className={`nav-link link-body-emphasis ${(value = "allposts"
-                ? `active`
-                : null)}`}
+              className={`nav-link link-body-emphasis ${
+                value == "allposts" ? "active" : null
+              }`}
               aria-current="page"
               onClick={() => Select("allposts")}
             >
@@ -34,7 +34,9 @@ function Sidebar({ Select, value }) {
           <li>
             <a
               href="#"
-              className="nav-link link-body-emphasis"
+              className={`nav-link link-body-emphasis ${
+                value == "createpost" ? "active" : null
+              }`}
               onClick={() => Select("createpost")}
             >
               <svg className="bi pe-none me-2" width="16" height="16">
