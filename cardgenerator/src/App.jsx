@@ -4,18 +4,25 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Sidebar from "./Components/sidebar";
 import CreatePost from "./Components/createpost";
 import Cards from "./Components/cards";
+import { useState } from "react";
 
 function App() {
+  let [value, setValue] = useState("");
+  function Select(val) {
+    setValue(val);
+  }
   return (
     <>
       <div className="body">
-        <Sidebar />
+        <Sidebar Select={Select} value={value} />
         <div>
           <Navbar />
-          <CreatePost />
-          <div className="cards">
-            <Cards />
-          </div>
+          {value === "createpost" ? <CreatePost /> : null}
+          {value === "allposts" ? (
+            <div className="cards">
+              <Cards />
+            </div>
+          ) : null}
         </div>
       </div>
     </>

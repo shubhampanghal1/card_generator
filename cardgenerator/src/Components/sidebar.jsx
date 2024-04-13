@@ -1,4 +1,4 @@
-function Sidebar() {
+function Sidebar({ Select, value }) {
   return (
     <>
       <div
@@ -17,7 +17,14 @@ function Sidebar() {
         <br />
         <ul className="nav nav-pills flex-column mb-auto">
           <li className="nav-item">
-            <a href="#" className="nav-link active" aria-current="page">
+            <a
+              href="#"
+              className={`nav-link link-body-emphasis ${(value = "allposts"
+                ? `active`
+                : null)}`}
+              aria-current="page"
+              onClick={() => Select("allposts")}
+            >
               <svg className="bi pe-none me-2" width="16" height="16">
                 <use xlinkHref="#home"></use>
               </svg>
@@ -25,7 +32,11 @@ function Sidebar() {
             </a>
           </li>
           <li>
-            <a href="#" className="nav-link link-body-emphasis">
+            <a
+              href="#"
+              className="nav-link link-body-emphasis"
+              onClick={() => Select("createpost")}
+            >
               <svg className="bi pe-none me-2" width="16" height="16">
                 <use xlinkHref="#speedometer2"></use>
               </svg>
