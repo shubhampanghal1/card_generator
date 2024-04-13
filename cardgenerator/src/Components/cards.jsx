@@ -4,8 +4,6 @@ function Cards() {
   return (
     <>
       <Card />
-      <Card />
-      <Card />
     </>
   );
 }
