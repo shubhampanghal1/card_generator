@@ -7,5 +7,18 @@
 }
 
 .navbar {
-    width: 77vw;
+    width: 84vw;
+}
+
+.createpost {
+    width: 250px;
+    margin: 10px 30px;
+}
+
+.cards{
+    display: flex;
+}
+
+.card {
+    margin: 10px 30px 30px 10px;
 }

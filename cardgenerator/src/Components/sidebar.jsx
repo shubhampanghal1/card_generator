@@ -3,7 +3,7 @@ function Sidebar() {
     <>
       <div
         className="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary sidebar"
-        style={{ width: "23vw" }}
+        style={{ width: "16vw" }}
       >
         <a
           href="/"
