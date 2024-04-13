@@ -1,13 +1,13 @@
 function Navbar() {
   return (
     <>
-      <nav classname="navbar navbar-expand-lg bg-body-tertiary">
-        <div classname="container-fluid">
-          <a classname="navbar-brand" href="#">
-            Navbar
+      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+        <div className="container-fluid">
+          <a className="navbar-brand" href="#">
+            Home
           </a>
           <button
-            classname="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNavAltMarkup"
@@ -15,14 +15,11 @@ function Navbar() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span classname="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div classname="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div classname="navbar-nav">
-              <a classname="nav-link active" aria-current="page" href="#">
-                Home
-              </a>
-              <a classname="nav-link" href="#">
+          <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div className="navbar-nav">
+              <a className="nav-link active" aria-current="page" href="#">
                 About Us
               </a>
             </div>

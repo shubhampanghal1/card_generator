@@ -6,8 +6,12 @@ import Sidebar from "./Components/sidebar";
 function App() {
   return (
     <>
-      <Navbar />
-      <Sidebar />
+      <div className="body">
+        <Sidebar />
+        <div>
+          <Navbar className="inner" />
+        </div>
+      </div>
     </>
   );
 }

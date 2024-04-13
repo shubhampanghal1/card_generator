@@ -2,104 +2,37 @@ function Sidebar() {
   return (
     <>
       <div
-        classnameName="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary"
-        style={{ width: "280px" }}
+        className="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary sidebar"
+        style={{ width: "23vw" }}
       >
         <a
           href="/"
-          classnameName="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
+          className="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
         >
-          <svg classnameName="bi pe-none me-2" width="40" height="32">
+          <svg className="bi pe-none me-2" width="40" height="32">
             <use xlinkHref="#bootstrap"></use>
           </svg>
-          <span classnameName="fs-4">Sidebar</span>
+          <span className="fs-4">Card Generator</span>
         </a>
-        <hr />
-        <ul classnameName="nav nav-pills flex-column mb-auto">
-          <li classnameName="nav-item">
-            <a href="#" classnameName="nav-link active" aria-current="page">
-              <svg classnameName="bi pe-none me-2" width="16" height="16">
+        <br />
+        <ul className="nav nav-pills flex-column mb-auto">
+          <li className="nav-item">
+            <a href="#" className="nav-link active" aria-current="page">
+              <svg className="bi pe-none me-2" width="16" height="16">
                 <use xlinkHref="#home"></use>
               </svg>
-              Home
+              All Post
             </a>
           </li>
           <li>
-            <a href="#" classnameName="nav-link link-body-emphasis">
-              <svg classnameName="bi pe-none me-2" width="16" height="16">
+            <a href="#" className="nav-link link-body-emphasis">
+              <svg className="bi pe-none me-2" width="16" height="16">
                 <use xlinkHref="#speedometer2"></use>
               </svg>
-              Dashboard
-            </a>
-          </li>
-          <li>
-            <a href="#" classnameName="nav-link link-body-emphasis">
-              <svg classnameName="bi pe-none me-2" width="16" height="16">
-                <use xlinkHref="#table"></use>
-              </svg>
-              Orders
-            </a>
-          </li>
-          <li>
-            <a href="#" classnameName="nav-link link-body-emphasis">
-              <svg classnameName="bi pe-none me-2" width="16" height="16">
-                <use xlinkHref="#grid"></use>
-              </svg>
-              Products
-            </a>
-          </li>
-          <li>
-            <a href="#" classnameName="nav-link link-body-emphasis">
-              <svg classnameName="bi pe-none me-2" width="16" height="16">
-                <use xlinkHref="#people-circle"></use>
-              </svg>
-              Customers
+              Create Post
             </a>
           </li>
         </ul>
-        <hr />
-        <div classnameName="dropdown">
-          <a
-            href="#"
-            classnameName="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            <img
-              src="https://github.com/mdo.png"
-              alt=""
-              width="32"
-              height="32"
-              classnameName="rounded-circle me-2"
-            />
-            <strong>mdo</strong>
-          </a>
-          <ul classnameName="dropdown-menu text-small shadow">
-            <li>
-              <a classnameName="dropdown-item" href="#">
-                New project...
-              </a>
-            </li>
-            <li>
-              <a classnameName="dropdown-item" href="#">
-                Settings
-              </a>
-            </li>
-            <li>
-              <a classnameName="dropdown-item" href="#">
-                Profile
-              </a>
-            </li>
-            <li>
-              <hr classnameName="dropdown-divider" />
-            </li>
-            <li>
-              <a classnameName="dropdown-item" href="#">
-                Sign out
-              </a>
-            </li>
-          </ul>
-        </div>
       </div>
     </>
   );
