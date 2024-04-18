@@ -1,11 +1,19 @@
-import { createContext } from "react";
+import { createContext, useReducer } from "react";
 
 let store = createContext();
 
 function StoreProvider({ children }) {
+  function postListReducer() {
+    return;
+  }
+  let [postList, dispatchPostList] = useReducer(postListReducer, [
+    { title: "Asus 5z", body: "My First Phone" },
+    { title: "Google Pixel 6a", body: "Current Phone" },
+  ]);
+
   return (
     <>
-      <store.Provider>{children}</store.Provider>
+      <store.Provider value={postList}>{children}</store.Provider>
     </>
   );
 }
