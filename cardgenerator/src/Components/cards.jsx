@@ -4,9 +4,13 @@ import { store } from "../store/store";
 
 function Cards() {
   let list = useContext(store);
-
-  console.log(list);
-  return <></>;
+  return (
+    <>
+      {list[0].map((x) => (
+        <Card x={x} />
+      ))}
+    </>
+  );
 }
 
 export default Cards;

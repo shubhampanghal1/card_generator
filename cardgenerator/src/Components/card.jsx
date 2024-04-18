@@ -1,13 +1,10 @@
-function Card() {
+function Card({ x }) {
   return (
     <>
       <div class="card text-bg-warning " style={{ width: "200px" }}>
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
+          <h5 class="card-title">{x.title}</h5>
+          <p class="card-text">{x.body}</p>
           <a href="#" class="btn btn-light">
             Go somewhere
           </a>

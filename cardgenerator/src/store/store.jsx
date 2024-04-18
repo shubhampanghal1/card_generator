@@ -10,10 +10,9 @@ function StoreProvider({ children }) {
     { title: "Asus 5z", body: "My First Phone" },
     { title: "Google Pixel 6a", body: "Current Phone" },
   ]);
-
   return (
     <>
-      <store.Provider value={postList}>{children}</store.Provider>
+      <store.Provider value={[postList]}>{children}</store.Provider>
     </>
   );
 }
