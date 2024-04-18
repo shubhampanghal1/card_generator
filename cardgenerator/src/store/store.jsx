@@ -7,14 +7,18 @@ function StoreProvider({ children }) {
     return;
   }
 
+  function DeletePost(id) {
+    return;
+  }
+
   let [postList, dispatchPostList] = useReducer(postListReducer, [
-    { title: "Asus 5z", body: "My First Phone", notifications: "5" },
-    { title: "Google Pixel 6a", body: "Current Phone", notifications: "2" },
+    { id: 1, title: "Asus 5z", body: "My First Phone" },
+    { id: 2, title: "Google Pixel 6a", body: "Current Phone" },
   ]);
 
   return (
     <>
-      <store.Provider value={[postList]}>{children}</store.Provider>
+      <store.Provider value={[postList, DeletePost]}>{children}</store.Provider>
     </>
   );
 }
