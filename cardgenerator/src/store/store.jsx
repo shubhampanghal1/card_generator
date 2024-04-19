@@ -3,12 +3,23 @@ import { createContext, useReducer } from "react";
 let store = createContext();
 
 function StoreProvider({ children }) {
-  function postListReducer() {
-    return;
+  function postListReducer(currPostList, action) {
+    let newPostList = currPostList;
+    if (action.type == "Delete_Post") {
+      newPostList = currPostList.filter(
+        (post) => post.id !== action.payload.itemID
+      );
+    }
+    return newPostList;
   }
 
-  function DeletePost(id) {
-    return;
+  function DeletePost(itemID) {
+    dispatchPostList({
+      type: "Delete_Post",
+      payload: {
+        itemID,
+      },
+    });
   }
 
   let [postList, dispatchPostList] = useReducer(postListReducer, [
