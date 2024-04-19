@@ -9,6 +9,11 @@ function StoreProvider({ children }) {
       newPostList = currPostList.filter(
         (post) => post.id !== action.payload.itemID
       );
+    } else if (action.type == "Add_Post") {
+      newPostList = [
+        ...currPostList,
+        { title: action.payload.postName, body: action.payload.postContent },
+      ];
     }
     return newPostList;
   }
@@ -22,6 +27,16 @@ function StoreProvider({ children }) {
     });
   }
 
+  function AddPost(postName, postContent) {
+    dispatchPostList({
+      type: "Add_Post",
+      payload: {
+        postName: postName,
+        postContent: postContent,
+      },
+    });
+  }
+
   let [postList, dispatchPostList] = useReducer(postListReducer, [
     { id: 1, title: "Asus 5z", body: "My First Phone" },
     { id: 2, title: "Google Pixel 6a", body: "Current Phone" },
@@ -29,7 +44,9 @@ function StoreProvider({ children }) {
 
   return (
     <>
-      <store.Provider value={[postList, DeletePost]}>{children}</store.Provider>
+      <store.Provider value={[postList, DeletePost, AddPost]}>
+        {children}
+      </store.Provider>
     </>
   );
 }

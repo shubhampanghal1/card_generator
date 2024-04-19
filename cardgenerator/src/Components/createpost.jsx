@@ -1,17 +1,25 @@
-import { useRef } from "react";
+import { useContext, useRef } from "react";
+import { store } from "../store/store";
 
 function CreatePost() {
-  let postName = useRef();
-  let postContent = useRef();
-  function handleName(event) {
-    postName = event.target.value;
+  let postNameInput = useRef();
+  let postContentInput = useRef();
+  let AddP = useContext(store);
+  let addPost = AddP[2];
+
+  function HandleSubmit() {
+    let postName = postNameInput.current.value;
+    let postContent = postContentInput.current.value;
+
+    addPost(postName, postContent);
+
+    postNameInput.current.value = "";
+    postContentInput.current.value = "";
   }
-  function handleContent(event) {
-    postContent = event.target.value;
-  }
+
   return (
     <>
-      <form className="createpost">
+      <form className="createpost" onSubmit={HandleSubmit}>
         <div className="mb-3">
           <label for="exampleInputEmail1" className="form-label">
             Name
@@ -21,7 +29,7 @@ function CreatePost() {
             className="form-control"
             id="name"
             aria-describedby="emailHelp"
-            onChange={(event) => handleName(event)}
+            ref={postNameInput}
           />
         </div>
         <div className="mb-3">
@@ -32,11 +40,11 @@ function CreatePost() {
             type="text"
             className="form-control"
             id="content"
-            onChange={(event) => handleContent(event)}
+            ref={postContentInput}
           />
         </div>
         <button type="submit" className="btn btn-primary">
-          Submit
+          Post
         </button>
       </form>
     </>
